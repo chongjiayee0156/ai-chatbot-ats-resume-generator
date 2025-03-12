@@ -208,8 +208,9 @@ def upload_to_supabase(file_data, file_name):
     """Uploads the DOCX file to Supabase Storage and returns the public URL."""
     response = supabase.storage.from_(BUCKET_NAME).upload(file_name, file_data.getvalue(), {"content-type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"})
 
-    # Check if there was an error in the response
+    # Check if the response is successful
     if response.status_code == 200:  # Successful upload
+        # Get the public URL for the uploaded file
         public_url = f"{SUPABASE_URL}/storage/v1/object/public/{BUCKET_NAME}/{file_name}"
         return public_url
     else:
