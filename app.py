@@ -1,11 +1,24 @@
+from flask import Flask, request, jsonify
+from io import BytesIO
+import base64
 from docx import Document
 from docx.shared import Pt, Inches, RGBColor
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT, WD_TAB_ALIGNMENT
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.opc.constants import RELATIONSHIP_TYPE
-from flask import Flask, request, send_file
-from io import BytesIO
+from supabase import create_client, Client
+import uuid
+from datetime import datetime
+
+# Supabase Configuration
+SUPABASE_URL = "https://zasleszppwndgrajepva.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inphc2xlc3pwcHduZGdyYWplcHZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE3NTcxNTksImV4cCI6MjA1NzMzMzE1OX0.01lXJaFUM55DK4EWslmdosboNhGRETo2fbsFtnuRMck"
+BUCKET_NAME = "test-bucket"
+SERVICE_ROLE = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inphc2xlc3pwcHduZGdyYWplcHZhIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0MTc1NzE1OSwiZXhwIjoyMDU3MzMzMTU5fQ.yFjXTwQDFqFj97YquJu8dMQUrlTOJeMG09FiVpz4EH0"
+
+# Initialize Supabase Client
+supabase: Client = create_client(SUPABASE_URL, SERVICE_ROLE)
 
 app = Flask(__name__)
 
@@ -86,7 +99,10 @@ def create_ats_resume(user_data):
         paragraph._element.append(hyperlink)
 
     # Header - Name
-    name = user_data.get("name", "Your Name")
+    if user_data.get("name"):
+        name = user_data["name"].upper()
+    else:
+        name = "Your Name"
     p = doc.add_paragraph(name)
     p.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
     run = p.runs[0]
@@ -182,16 +198,46 @@ def create_ats_resume(user_data):
                     p.add_run(skills_text).font.name = "Times New Roman"
                     p.runs[0].font.size = Pt(10)
 
+    # Save document to BytesIO
     output = BytesIO()
     doc.save(output)
     output.seek(0)
     return output
 
+def upload_to_supabase(file_data, file_name):
+    """Uploads the DOCX file to Supabase Storage and returns the public URL."""
+    response = supabase.storage.from_(BUCKET_NAME).upload(file_name, file_data.getvalue(), {"content-type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"})
+
+    # Check if there was an error in the response
+    if response.status_code == 200:  # Successful upload
+        public_url = f"{SUPABASE_URL}/storage/v1/object/public/{BUCKET_NAME}/{file_name}"
+        return public_url
+    else:
+        # Handle error if present
+        error = response.error_message if hasattr(response, 'error_message') else 'Unknown error'
+        print(f"Error uploading file: {error}")
+        return None
+
+def generate_unique_filename(file_name):
+    unique_id = uuid.uuid4().hex  # Or use datetime.now().timestamp() for a timestamp-based name
+    base_name, ext = file_name.rsplit('.', 1)
+    return f"{base_name}_{unique_id}.{ext}"
+
 @app.route('/generate_resume', methods=['POST'])
 def generate_resume():
     user_data = request.json
     doc_file = create_ats_resume(user_data)
-    return send_file(doc_file, as_attachment=True, download_name="resume.docx", mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+
+    # Define file name
+    file_name = generate_unique_filename("resume.docx")
+
+    # Upload to Supabase
+    file_url = upload_to_supabase(doc_file, file_name)
+
+    if file_url:
+        return jsonify({"message": "Resume uploaded successfully", "download_url": file_url})
+    else:
+        return jsonify({"error": "Failed to upload"}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
