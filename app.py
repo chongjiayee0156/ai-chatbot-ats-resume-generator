@@ -144,7 +144,7 @@ def create_ats_resume(user_data):
 
     # Section: EDUCATION
     education_list = user_data.get("education", [])
-    if education_list:
+    if education_list and education_list != [{}]:
         add_section_title("EDUCATION")
         for edu in education_list:
             add_entry_with_right_aligned_date(edu.get("institution"), edu.get("period"))
@@ -163,7 +163,7 @@ def create_ats_resume(user_data):
 
     # Section: EXPERIENCE
     experience_list = user_data.get("experience", [])
-    if experience_list:
+    if experience_list and experience_list != [{}]:
         add_section_title("EXPERIENCE")
         for exp in experience_list:
             add_entry_with_right_aligned_date(exp.get("company"), exp.get("period"))
@@ -173,7 +173,7 @@ def create_ats_resume(user_data):
 
     # Section: PROJECTS
     projects_list = user_data.get("projects", [])
-    if projects_list:
+    if projects_list and projects_list != [{}]:
         add_section_title("PROJECTS")
         for proj in projects_list:
             add_entry_with_right_aligned_date(proj.get("project_name"), proj.get("period"))
@@ -183,7 +183,7 @@ def create_ats_resume(user_data):
 
     # Section: ACHIEVEMENTS
     achievements_list = user_data.get("achievements", [])
-    if achievements_list:
+    if achievements_list and achievements_list != [{}]:
         add_section_title("ACHIEVEMENTS")
         for ach in achievements_list:
             add_entry_with_right_aligned_date(ach.get("achievement"), ach.get("date/period"))
@@ -192,7 +192,7 @@ def create_ats_resume(user_data):
 
     # Section: SKILLS
     skills_list = user_data.get("skills", [])
-    if skills_list:
+    if skills_list and skills_list != [{}]:
         add_section_title("SKILLS")
         for category in skills_list:
             for skill, skills in category.items():
@@ -320,7 +320,7 @@ if __name__ == '__main__':
 #       "Programming Languages": ["Python", "JavaScript", "Java", "C++"],
 #       "Web Development": ["React", "Node.js", "HTML", "CSS"],
 #       "Database Management": ["MySQL", "MongoDB"]
-#     },
+#     },s
 #     {
 #       "Soft Skills": ["Teamwork", "Problem Solving", "Time Management"]
 #     }
