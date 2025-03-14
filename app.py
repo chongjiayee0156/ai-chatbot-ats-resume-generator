@@ -186,7 +186,7 @@ def create_ats_resume(user_data):
     if achievements_list and achievements_list != [{}]:
         add_section_title("ACHIEVEMENTS")
         for ach in achievements_list:
-            add_entry_with_right_aligned_date(ach.get("achievement"), ach.get("date/period"))
+            add_entry_with_right_aligned_date(ach.get("achievement"), ach.get("date_or_period"))
             if "achievement_description" in ach:
                 doc.add_paragraph(ach["achievement_description"], style="List Bullet").runs[0].font.size = Pt(10)
 
@@ -306,12 +306,12 @@ if __name__ == '__main__':
 #   "achievements": [
 #     {
 #       "achievement": "Best Developer Award",
-#       "date/period": "2022",
+#       "date_or_period": "2022",
 #       "achievement_description": "Received the Best Developer Award for outstanding performance at Tech Corp."
 #     },
 #     {
 #       "achievement": "Hackathon Winner",
-#       "date/period": "2021",
+#       "date_or_period": "2021",
 #       "achievement_description": "Won the first prize in a company-wide hackathon for creating an innovative app idea."
 #     }
 #   ],
