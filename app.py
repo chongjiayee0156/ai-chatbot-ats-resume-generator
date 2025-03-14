@@ -153,6 +153,9 @@ def create_ats_resume(user_data):
                 p.runs[0].italic = True
                 p.runs[0].font.name = "Times New Roman"
                 p.runs[0].font.size = Pt(10)
+                # Set space_after on the paragraph_format
+                p.paragraph_format.space_after = Pt(0)  # This will remove the space after the paragraph
+
 
             for field in ["results", "related_coursework"]:
                 if field in edu:
@@ -248,61 +251,78 @@ def generate_resume():
 if __name__ == '__main__':
     app.run(debug=True)
 
-# dummy_json_data = {
+# {
 #   "name": "John Doe",
 #   "phone": "+1 123 456 7890",
 #   "email": "johndoe@example.com",
+#   "linked_in": "linkedin.com/in/johndoe",
+#   "github": "github.com/johndoe",
 #   "portfolio_website": "johndoe.com",
-#   "introduction_paragraph": "Detail-oriented software engineer with 5 years of experience in full-stack web development. Passionate about building scalable applications and improving system performance.",
-  
-#   "experience": [
+#   "introduction_paragraph": "An enthusiastic software engineer with experience in developing innovative applications. Passionate about coding and solving real-world problems with technology.",
+#   "education": [
 #     {
-#       "company": "Tech Solutions Inc.",
-#       "period": "2020 - Present",
-#       "job_description": "Developed and maintained web applications using React and Node.js.",
-#       "related_knowledge": "JavaScript, React, Node.js, Express, MongoDB"
+#       "institution": "Harvard University",
+#       "period": "2015 - 2019",
+#       "course_name": "Bachelor of Computer Science",
+#       "results": "3.9 GPA",
+#       "related_coursework": "Data Structures, Algorithms, Machine Learning"
 #     },
 #     {
-#       "company": "Web Innovations Ltd.",
-#       "period": "2018 - 2020",
-#       "job_description": "Designed and optimized RESTful APIs for enterprise applications.",
-#       "related_knowledge": "RESTful APIs, Python, Flask, PostgreSQL"
+#       "institution": "Stanford University",
+#       "period": "2020 - 2022",
+#       "course_name": "Master of Software Engineering",
+#       "results": "4.0 GPA",
+#       "related_coursework": "Distributed Systems, Artificial Intelligence"
+#     }
+#   ],
+#   "experience": [
+#     {
+#       "company": "Tech Corp",
+#       "period": "2021 - Present",
+#       "job_description": "Developed web applications using React and Node.js. Led the implementation of RESTful APIs.",
+#       "related_knowledge": "React, Node.js, RESTful APIs, MongoDB"
+#     },
+#     {
+#       "company": "Dev Solutions",
+#       "period": "2019 - 2021",
+#       "job_description": "Collaborated in a team to build a full-stack e-commerce platform. Worked on both frontend and backend.",
+#       "related_knowledge": "HTML, CSS, JavaScript, Python, Django"
 #     }
 #   ],
 #   "projects": [
 #     {
-#       "project_name": "E-commerce Platform",
-#       "project_description": "Developed a fully functional e-commerce platform with secure payment integration.",
-#       "related_knowledge": "React, Redux, Stripe API, Firebase"
+#       "project_name": "Personal Portfolio Website",
+#       "period": "2021",
+#       "project_description": "Built a personal portfolio website to showcase various projects and skills. Integrated with GitHub for project management.",
+#       "related_knowledge": "HTML, CSS, JavaScript, GitHub"
 #     },
 #     {
-#       "project_name": "Chatbot Application",
+#       "project_name": "Weather App",
 #       "period": "2020",
-#       "project_description": "Built an AI-powered chatbot for customer support automation.",
-#       "related_knowledge": "Python, TensorFlow, NLP"
+#       "project_description": "Developed a weather forecasting app using React. Integrated OpenWeather API for real-time data.",
+#       "related_knowledge": "React, API Integration"
 #     }
 #   ],
 #   "achievements": [
 #     {
-#       "achievement": "Hackathon Winner",
-#       "date/period": "2019",
-#       "achievement_description": "Won first place in a national hackathon for developing an AI-driven recommendation system."
+#       "achievement": "Best Developer Award",
+#       "date/period": "2022",
+#       "achievement_description": "Received the Best Developer Award for outstanding performance at Tech Corp."
 #     },
 #     {
-#       "achievement": "Certified AWS Solutions Architect",
+#       "achievement": "Hackathon Winner",
 #       "date/period": "2021",
-#       "achievement_description": "Earned AWS Solutions Architect certification demonstrating cloud expertise."
+#       "achievement_description": "Won the first prize in a company-wide hackathon for creating an innovative app idea."
 #     }
 #   ],
 #   "skills": [
-#       {"frontend development": ["HTML", "CSS", "JavaScript", "React", "Angular"]},
-#       {"backend development": ["Node.js", "Express", "Python", "Django", "Flask"]},
-#       {"databases": ["MongoDB", "PostgreSQL", "MySQL", "Firebase"]},
-#       {"cloud technologies": ["AWS", "Google Cloud", "Azure"]},
-#       {"machine learning": ["TensorFlow", "Scikit-learn", "Keras", "PyTorch"]}
+#     {
+#       "Programming Languages": ["Python", "JavaScript", "Java", "C++"],
+#       "Web Development": ["React", "Node.js", "HTML", "CSS"],
+#       "Database Management": ["MySQL", "MongoDB"]
+#     },
+#     {
+#       "Soft Skills": ["Teamwork", "Problem Solving", "Time Management"]
+#     }
 #   ]
 # }
-
-
-# # Example Usage:
-# create_ats_resume(dummy_json_data)
