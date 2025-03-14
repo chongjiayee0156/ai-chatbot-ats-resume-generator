@@ -10,6 +10,7 @@ from docx.opc.constants import RELATIONSHIP_TYPE
 from supabase import create_client, Client
 import uuid
 from datetime import datetime
+import json
 
 # Supabase Configuration
 SUPABASE_URL = "https://zasleszppwndgrajepva.supabase.co"
@@ -219,7 +220,18 @@ def generate_unique_filename(file_name):
 
 @app.route('/generate_resume', methods=['POST'])
 def generate_resume():
-    user_data = request.json
+# Output: <class 'str'>
+    user_data = request.get_json()
+    
+    print("hi")
+    print(type(user_data))
+    
+    
+    if isinstance(user_data, str):  # Handle string-encoded JSON
+        user_data = json.loads(user_data)
+        
+        print("bye")
+        
     doc_file = create_ats_resume(user_data)
 
     # Define file name
