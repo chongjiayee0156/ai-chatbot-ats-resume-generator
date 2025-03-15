@@ -197,7 +197,8 @@ def create_ats_resume(user_data):
         for category in skills_list:
             for skill, skills in category.items():
                 if skills:
-                    skills_text = f"{skill}: {' | '.join(skills)}"
+                    split_skills = skills.split(", ")
+                    skills_text = f"{skill}: {' | '.join(split_skills)}"
                     p = doc.add_paragraph(style='List Bullet')
                     p.add_run(skills_text).font.name = "Times New Roman"
                     p.runs[0].font.size = Pt(10)
@@ -225,10 +226,6 @@ def generate_unique_filename(file_name):
 def generate_resume():
 # Output: <class 'str'>
     user_data = request.get_json()
-    
-    print("hi")
-    print(type(user_data))
-    
     
     if isinstance(user_data, str):  # Handle string-encoded JSON
         user_data = json.loads(user_data)
@@ -314,15 +311,96 @@ if __name__ == '__main__':
 #       "date_or_period": "2021",
 #       "achievement_description": "Won the first prize in a company-wide hackathon for creating an innovative app idea."
 #     }
-#   ],
+#   ],  
 #   "skills": [
 #     {
 #       "Programming Languages": ["Python", "JavaScript", "Java", "C++"],
 #       "Web Development": ["React", "Node.js", "HTML", "CSS"],
 #       "Database Management": ["MySQL", "MongoDB"]
-#     },s
+#     },
 #     {
 #       "Soft Skills": ["Teamwork", "Problem Solving", "Time Management"]
 #     }
 #   ]
 # }
+
+{
+  "name": "[Full Name]",
+  "phone": "[Phone Number]",
+  "email": "[Email Address]",
+  "linked_in": "[LinkedIn Profile URL]",
+  "github": "[GitHub Profile URL]",
+  "portfolio_website": "[Portfolio Website URL]",
+  "introduction_paragraph": "[Brief personal summary highlighting experience, skills, and passion for the field]",
+  
+  "education": [
+    {
+      "institution": "[University or Institution Name]",
+      "period": "[Start Year - End Year]",
+      "course_name": "[Degree or Course Name]",
+      "results": "[GPA or Notable Academic Achievement]",
+      "related_coursework": "[Key subjects or coursework relevant to the field]"
+    },
+    {
+      "institution": "[University or Institution Name]",
+      "period": "[Start Year - End Year]",
+      "course_name": "[Degree or Course Name]",
+      "results": "[GPA or Notable Academic Achievement]",
+      "related_coursework": "[Key subjects or coursework relevant to the field]"
+    }
+  ],
+  
+  "experience": [
+    {
+      "company": "[Company Name]",
+      "period": "[Start Year - End Year or Present]",
+      "job_description": "[Key responsibilities and achievements in the role]",
+      "related_knowledge": "[Relevant technologies, frameworks, or methodologies used]"
+    },
+    {
+      "company": "[Company Name]",
+      "period": "[Start Year - End Year or Present]",
+      "job_description": "[Key responsibilities and achievements in the role]",
+      "related_knowledge": "[Relevant technologies, frameworks, or methodologies used]"
+    }
+  ],
+  
+  "projects": [
+    {
+      "project_name": "[Project Title]",
+      "period": "[Year or Duration]",
+      "project_description": "[Brief summary of the project, its goals, and the role played]",
+      "related_knowledge": "[Technologies, frameworks, or tools used]"
+    },
+    {
+      "project_name": "[Project Title]",
+      "period": "[Year or Duration]",
+      "project_description": "[Brief summary of the project, its goals, and the role played]",
+      "related_knowledge": "[Technologies, frameworks, or tools used]"
+    }
+  ],
+  
+  "achievements": [
+    {
+      "achievement": "[Award or Recognition Title]",
+      "date_or_period": "[Year or Date]",
+      "achievement_description": "[Brief explanation of the achievement and its significance]"
+    },
+    {
+      "achievement": "[Award or Recognition Title]",
+      "date_or_period": "[Year or Date]",
+      "achievement_description": "[Brief explanation of the achievement and its significance]"
+    }
+  ],
+  
+  "skills": [
+    {
+      "language": ["[Language 1]", "[Language 2]", "[Language 3]"],
+      "skill1": ["[skill 1]", "[skill 2]", "[skill 3]"],
+      "skill2": ["[skill 1]", "[skill 2]"]
+    },
+    {
+      "skill3": ["[Skill 1]", "[Skill 2]", "[Skill 3]"]
+    }
+  ]
+}
