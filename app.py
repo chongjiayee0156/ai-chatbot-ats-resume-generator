@@ -317,87 +317,89 @@ if __name__ == '__main__':
 #   ],  
 #   "skills": [
 #     {
-#       "Programming Languages": "Python | JavaScript | Java | C++"
+#         "skill_name": "Programming Languages",
+#         "skills": "Python, JavaScript, Java, C++"
 #     },
 #     {
-#       "Web Development": "HTML | CSS | React | Node.js | Django"
-#     },
+#         "skill_name": "Frameworks",
+#         "skills": "React, Node.js, Django, Flask"
+#     }
 #   ]
 # }
 
-{
-  "name": "[Full Name]",
-  "phone": "[Phone Number]",
-  "email": "[Email Address]",
-  "linked_in": "[LinkedIn Profile URL]",
-  "github": "[GitHub Profile URL]",
-  "portfolio_website": "[Portfolio Website URL]",
-  "introduction_paragraph": "[Brief personal summary highlighting experience, skills, and passion for the field]",
+# {
+#   "name": "[Full Name]",
+#   "phone": "[Phone Number]",
+#   "email": "[Email Address]",
+#   "linked_in": "[LinkedIn Profile URL]",
+#   "github": "[GitHub Profile URL]",
+#   "portfolio_website": "[Portfolio Website URL]",
+#   "introduction_paragraph": "[Brief personal summary highlighting experience, skills, and passion for the field]",
   
-  "education": [
-    {
-      "institution": "[University or Institution Name]",
-      "period": "[Start Year - End Year]",
-      "course_name": "[Degree or Course Name]",
-      "results": "[GPA or Notable Academic Achievement]",
-      "related_coursework": "[Key subjects or coursework relevant to the field]"
-    },
-    {
-      "institution": "[University or Institution Name]",
-      "period": "[Start Year - End Year]",
-      "course_name": "[Degree or Course Name]",
-      "results": "[GPA or Notable Academic Achievement]",
-      "related_coursework": "[Key subjects or coursework relevant to the field]"
-    }
-  ],
+#   "education": [
+#     {
+#       "institution": "[University or Institution Name]",
+#       "period": "[Start Year - End Year]",
+#       "course_name": "[Degree or Course Name]",
+#       "results": "[GPA or Notable Academic Achievement]",
+#       "related_coursework": "[Key subjects or coursework relevant to the field]"
+#     },
+#     {
+#       "institution": "[University or Institution Name]",
+#       "period": "[Start Year - End Year]",
+#       "course_name": "[Degree or Course Name]",
+#       "results": "[GPA or Notable Academic Achievement]",
+#       "related_coursework": "[Key subjects or coursework relevant to the field]"
+#     }
+#   ],
   
-  "experience": [
-    {
-      "company": "[Company Name]",
-      "period": "[Start Year - End Year or Present]",
-      "job_description": "[Key responsibilities and achievements in the role]",
-      "related_knowledge": "[Relevant technologies, frameworks, or methodologies used]"
-    },
-    {
-      "company": "[Company Name]",
-      "period": "[Start Year - End Year or Present]",
-      "job_description": "[Key responsibilities and achievements in the role]",
-      "related_knowledge": "[Relevant technologies, frameworks, or methodologies used]"
-    }
-  ],
+#   "experience": [
+#     {
+#       "company": "[Company Name]",
+#       "period": "[Start Year - End Year or Present]",
+#       "job_description": "[Key responsibilities and achievements in the role]",
+#       "related_knowledge": "[Relevant technologies, frameworks, or methodologies used]"
+#     },
+#     {
+#       "company": "[Company Name]",
+#       "period": "[Start Year - End Year or Present]",
+#       "job_description": "[Key responsibilities and achievements in the role]",
+#       "related_knowledge": "[Relevant technologies, frameworks, or methodologies used]"
+#     }
+#   ],
   
-  "projects": [
-    {
-      "project_name": "[Project Title]",
-      "period": "[Year or Duration]",
-      "project_description": "[Brief summary of the project, its goals, and the role played]",
-      "related_knowledge": "[Technologies, frameworks, or tools used]"
-    },
-    {
-      "project_name": "[Project Title]",
-      "period": "[Year or Duration]",
-      "project_description": "[Brief summary of the project, its goals, and the role played]",
-      "related_knowledge": "[Technologies, frameworks, or tools used]"
-    }
-  ],
+#   "projects": [
+#     {
+#       "project_name": "[Project Title]",
+#       "period": "[Year or Duration]",
+#       "project_description": "[Brief summary of the project, its goals, and the role played]",
+#       "related_knowledge": "[Technologies, frameworks, or tools used]"
+#     },
+#     {
+#       "project_name": "[Project Title]",
+#       "period": "[Year or Duration]",
+#       "project_description": "[Brief summary of the project, its goals, and the role played]",
+#       "related_knowledge": "[Technologies, frameworks, or tools used]"
+#     }
+#   ],
   
-  "achievements": [
-    {
-      "achievement": "[Award or Recognition Title]",
-      "date_or_period": "[Year or Date]",
-      "achievement_description": "[Brief explanation of the achievement and its significance]"
-    },
-    {
-      "achievement": "[Award or Recognition Title]",
-      "date_or_period": "[Year or Date]",
-      "achievement_description": "[Brief explanation of the achievement and its significance]"
-    }
-  ],
+#   "achievements": [
+#     {
+#       "achievement": "[Award or Recognition Title]",
+#       "date_or_period": "[Year or Date]",
+#       "achievement_description": "[Brief explanation of the achievement and its significance]"
+#     },
+#     {
+#       "achievement": "[Award or Recognition Title]",
+#       "date_or_period": "[Year or Date]",
+#       "achievement_description": "[Brief explanation of the achievement and its significance]"
+#     }
+#   ],
   
-  "skills": [
-    {
-      "skill_name": "[skill name]",
-      "skills": "[skill 1], [skill 2], [skill 3]"
-    }
-  ]
-}
+#   "skills": [
+#     {
+#       "skill_name": "[skill name]",
+#       "skills": "[skill 1], [skill 2], [skill 3]"
+#     }
+#   ]
+# }
