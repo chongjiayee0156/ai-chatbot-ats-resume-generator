@@ -196,13 +196,15 @@ def create_ats_resume(user_data):
         add_section_title("SKILLS")
 
         for category in skills_list:
-            for skill, skills in category.items():
-                if isinstance(skills, str):  # Ensure it's a string before splitting
-                    split_skills = [s.strip() for s in skills.split(",")]  # Strip spaces
-                    skills_text = f"{skill}: {' | '.join(split_skills)}"
-                    p = doc.add_paragraph(style='List Bullet')
-                    p.add_run(skills_text).font.name = "Times New Roman"
-                    p.runs[0].font.size = Pt(10)
+            skill_name = category.get("skill_name", "")  # Get skill category
+            skills = category.get("skills", "")  # Get skills string
+
+            if skill_name and skills:
+                split_skills = skills.split(", ")  # Use " | " as separator
+                skills_text = f"{skill_name}: {' | '.join(split_skills)}"
+                p = doc.add_paragraph(style='List Bullet')
+                p.add_run(skills_text).font.name = "Times New Roman"
+                p.runs[0].font.size = Pt(10)
 
     # Save document to BytesIO
     output = BytesIO()
@@ -250,12 +252,12 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 # {
-#   "name": "John Doe",
+#   "name": "Yoo Jae Yi",
 #   "phone": "+1 123 456 7890",
-#   "email": "johndoe@example.com",
-#   "linked_in": "linkedin.com/in/johndoe",
-#   "github": "github.com/johndoe",
-#   "portfolio_website": "johndoe.com",
+#   "email": "jay@example.com",
+#   "linked_in": "linkedin.com/in/jay",
+#   "github": "github.com/jay",
+#   "portfolio_website": "jay.com",
 #   "introduction_paragraph": "An enthusiastic software engineer with experience in developing innovative applications. Passionate about coding and solving real-world problems with technology.",
 #   "education": [
 #     {
@@ -315,13 +317,11 @@ if __name__ == '__main__':
 #   ],  
 #   "skills": [
 #     {
-#       "Programming Languages": ["Python", "JavaScript", "Java", "C++"],
-#       "Web Development": ["React", "Node.js", "HTML", "CSS"],
-#       "Database Management": ["MySQL", "MongoDB"]
+#       "Programming Languages": "Python | JavaScript | Java | C++"
 #     },
 #     {
-#       "Soft Skills": ["Teamwork", "Problem Solving", "Time Management"]
-#     }
+#       "Web Development": "HTML | CSS | React | Node.js | Django"
+#     },
 #   ]
 # }
 
@@ -396,10 +396,8 @@ if __name__ == '__main__':
   
   "skills": [
     {
-      "skill_name": "[skill 1] | [skill 2] | [skill 3]"
-    },
-    {
-      "skill_name": "[skill 1] | [skill 2] "
+      "skill_name": "[skill name]",
+      "skills": "[skill 1], [skill 2], [skill 3]"
     }
   ]
 }
