@@ -194,10 +194,11 @@ def create_ats_resume(user_data):
     skills_list = user_data.get("skills", [])
     if skills_list and skills_list != [{}]:
         add_section_title("SKILLS")
+
         for category in skills_list:
             for skill, skills in category.items():
-                if skills:
-                    split_skills = skills.split(", ")
+                if isinstance(skills, str):  # Ensure it's a string before splitting
+                    split_skills = [s.strip() for s in skills.split(",")]  # Strip spaces
                     skills_text = f"{skill}: {' | '.join(split_skills)}"
                     p = doc.add_paragraph(style='List Bullet')
                     p.add_run(skills_text).font.name = "Times New Roman"
@@ -395,12 +396,10 @@ if __name__ == '__main__':
   
   "skills": [
     {
-      "language": ["[Language 1]", "[Language 2]", "[Language 3]"],
-      "skill1": ["[skill 1]", "[skill 2]", "[skill 3]"],
-      "skill2": ["[skill 1]", "[skill 2]"]
+      "skill_name": "[skill 1] | [skill 2] | [skill 3]"
     },
     {
-      "skill3": ["[Skill 1]", "[Skill 2]", "[Skill 3]"]
+      "skill_name": "[skill 1] | [skill 2] "
     }
   ]
 }
