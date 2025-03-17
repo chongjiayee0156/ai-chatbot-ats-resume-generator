@@ -187,8 +187,8 @@ def create_ats_resume(user_data):
         add_section_title("ACHIEVEMENTS")
         for ach in achievements_list:
             add_entry_with_right_aligned_date(ach.get("achievement"), ach.get("date_or_period"))
-            if "achievement_description" in ach:
-                doc.add_paragraph(ach["achievement_description"], style="List Bullet").runs[0].font.size = Pt(10)
+            if "achievement_desc" in ach:
+                doc.add_paragraph(ach["achievement_desc"], style="List Bullet").runs[0].font.size = Pt(10)
 
     # Section: SKILLS
     skills_list = user_data.get("skills", [])
