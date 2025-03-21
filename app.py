@@ -165,47 +165,51 @@ def create_ats_resume(user_data):
     # Section: EXPERIENCE
     experience_list = user_data.get("experience", [])
     if experience_list and experience_list != [{}]:
-        add_section_title("EXPERIENCE")
-        for exp in experience_list:
-            add_entry_with_right_aligned_date(exp.get("company"), exp.get("period"))
-            for field in ["job_description", "related_knowledge"]:
-                if field in exp:
-                    doc.add_paragraph(exp[field], style="List Bullet").runs[0].font.size = Pt(10)
+        if [edu for edu in experience_list[0].values() if edu]:
+            add_section_title("EXPERIENCE")
+            for exp in experience_list:
+                add_entry_with_right_aligned_date(exp.get("company"), exp.get("period"))
+                for field in ["job_description", "related_knowledge"]:
+                    if field in exp:
+                        doc.add_paragraph(exp[field], style="List Bullet").runs[0].font.size = Pt(10)
 
     # Section: PROJECTS
     projects_list = user_data.get("projects", [])
     if projects_list and projects_list != [{}]:
-        add_section_title("PROJECTS")
-        for proj in projects_list:
-            add_entry_with_right_aligned_date(proj.get("project_name"), proj.get("period"))
-            for field in ["project_description", "related_knowledge"]:
-                if field in proj:
-                    doc.add_paragraph(proj[field], style="List Bullet").runs[0].font.size = Pt(10)
+        if [edu for edu in projects_list[0].values() if edu]:
+            add_section_title("PROJECTS")
+            for proj in projects_list:
+                add_entry_with_right_aligned_date(proj.get("project_name"), proj.get("period"))
+                for field in ["project_description", "related_knowledge"]:
+                    if field in proj:
+                        doc.add_paragraph(proj[field], style="List Bullet").runs[0].font.size = Pt(10)
 
     # Section: ACHIEVEMENTS
     achievements_list = user_data.get("achievements", [])
     if achievements_list and achievements_list != [{}]:
-        add_section_title("ACHIEVEMENTS")
-        for ach in achievements_list:
-            add_entry_with_right_aligned_date(ach.get("ach_title"), ach.get("ach_date"))
-            if "ach_description" in ach:
-                doc.add_paragraph(ach["ach_description"], style="List Bullet").runs[0].font.size = Pt(10)
+        if [edu for edu in achievements_list[0].values() if edu]:
+            add_section_title("ACHIEVEMENTS")
+            for ach in achievements_list:
+                add_entry_with_right_aligned_date(ach.get("ach_title"), ach.get("ach_date"))
+                if "ach_description" in ach:
+                    doc.add_paragraph(ach["ach_description"], style="List Bullet").runs[0].font.size = Pt(10)
 
     # Section: SKILLS
     skills_list = user_data.get("skills", [])
     if skills_list and skills_list != [{}]:
-        add_section_title("SKILLS")
+        if [edu for edu in skills_list[0].values() if edu]:
+            add_section_title("SKILLS")
 
-        for category in skills_list:
-            skill_name = category.get("skill_name", "")  # Get skill category
-            skills = category.get("skills", "")  # Get skills string
+            for category in skills_list:
+                skill_name = category.get("skill_name", "")  # Get skill category
+                skills = category.get("skills", "")  # Get skills string
 
-            if skill_name and skills:
-                split_skills = skills.split(", ")  # Use " | " as separator
-                skills_text = f"{skill_name}: {' | '.join(split_skills)}"
-                p = doc.add_paragraph(style='List Bullet')
-                p.add_run(skills_text).font.name = "Times New Roman"
-                p.runs[0].font.size = Pt(10)
+                if skill_name and skills:
+                    split_skills = skills.split(", ")  # Use " | " as separator
+                    skills_text = f"{skill_name}: {' | '.join(split_skills)}"
+                    p = doc.add_paragraph(style='List Bullet')
+                    p.add_run(skills_text).font.name = "Times New Roman"
+                    p.runs[0].font.size = Pt(10)
 
     # Save document to BytesIO
     output = BytesIO()
