@@ -145,21 +145,22 @@ def create_ats_resume(user_data):
     # Section: EDUCATION
     education_list = user_data.get("education", [])
     if education_list and education_list != [{}]:
-        add_section_title("EDUCATION")
-        for edu in education_list:
-            add_entry_with_right_aligned_date(edu.get("institution"), edu.get("period"))
-            if "course_name" in edu:
-                p = doc.add_paragraph(edu["course_name"])
-                p.runs[0].italic = True
-                p.runs[0].font.name = "Times New Roman"
-                p.runs[0].font.size = Pt(10)
-                # Set space_after on the paragraph_format
-                p.paragraph_format.space_after = Pt(0)  # This will remove the space after the paragraph
+        if [edu for edu in education_list[0].values() if edu]:
+            add_section_title("EDUCATION")
+            for edu in education_list:
+                add_entry_with_right_aligned_date(edu.get("institution"), edu.get("period"))
+                if "course_name" in edu:
+                    p = doc.add_paragraph(edu["course_name"])
+                    p.runs[0].italic = True
+                    p.runs[0].font.name = "Times New Roman"
+                    p.runs[0].font.size = Pt(10)
+                    # Set space_after on the paragraph_format
+                    p.paragraph_format.space_after = Pt(0)  # This will remove the space after the paragraph
 
 
-            for field in ["results", "related_coursework"]:
-                if field in edu:
-                    doc.add_paragraph(edu[field], style="List Bullet").runs[0].font.size = Pt(10)
+                for field in ["results", "related_coursework"]:
+                    if field in edu:
+                        doc.add_paragraph(edu[field], style="List Bullet").runs[0].font.size = Pt(10)
 
     # Section: EXPERIENCE
     experience_list = user_data.get("experience", [])
