@@ -13,10 +13,10 @@ from datetime import datetime
 import json
 
 # Supabase Configuration
-SUPABASE_URL = "https://zasleszppwndgrajepva.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inphc2xlc3pwcHduZGdyYWplcHZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE3NTcxNTksImV4cCI6MjA1NzMzMzE1OX0.01lXJaFUM55DK4EWslmdosboNhGRETo2fbsFtnuRMck"
-BUCKET_NAME = "test-bucket"
-SERVICE_ROLE = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inphc2xlc3pwcHduZGdyYWplcHZhIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0MTc1NzE1OSwiZXhwIjoyMDU3MzMzMTU5fQ.yFjXTwQDFqFj97YquJu8dMQUrlTOJeMG09FiVpz4EH0"
+SUPABASE_URL = ""
+SUPABASE_KEY = ""
+BUCKET_NAME = ""
+SERVICE_ROLE = ""
 
 # Initialize Supabase Client
 supabase: Client = create_client(SUPABASE_URL, SERVICE_ROLE)
