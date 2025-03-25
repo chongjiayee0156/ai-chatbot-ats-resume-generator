@@ -1,0 +1,132 @@
+Resume Template Configuration
+General Formatting:
+Margins: Narrow
+Right Tab Stop: 7 inches
+Heading
+{{name}}:
+
+Font: Times New Roman, uppercase, size 14
+Alignment: Center
+Line Spacing: 1
+No space before or after paragraph
+{{phone}} | {{email}} | {{linked_in}} | {{github}} | {{portfolio_website}}:
+
+Font: Times New Roman, title case, size 10
+Alignment: Center
+Hyperlinked
+Line Spacing: 1
+No space before or after paragraph
+Subheadings (INTRODUCTION, EDUCATION, EXPERIENCE, PROJECTS, ACHIEVEMENTS, SKILLS)
+Font: Times New Roman, uppercase, bold, size 10
+Alignment: Left
+Line Spacing: 1
+No space before or after paragraph
+Bottom border: 1pt horizontal line (full width of document)
+Introduction
+{{introduction_paragraph}}:
+Font: Times New Roman, size 10
+Alignment: Justified
+Line Spacing: 1
+No space before or after paragraph
+Education
+{{institution}} + {{period}} (on the same row):
+
+{{institution}}: Bold
+{{period}}: Regular
+Font: Times New Roman, size 10
+Alignment: Left
+Line Spacing: 1
+No space before or after paragraph
+Tab after {{institution}} before entering {{period}}
+{{course_name}}:
+
+Font: Times New Roman, italics, size 10
+Alignment: Left
+Line Spacing: 1
+No space before or after paragraph
+{{results}}:
+
+Bullet points
+Font: Times New Roman, size 10
+Alignment: Left
+Line Spacing: 1
+No space before or after paragraph
+Coursework: {{related_coursework}}:
+
+Bullet points
+Font: Times New Roman, size 10
+Alignment: Left
+Line Spacing: 1
+No space before or after paragraph
+Experience
+{{company}} + {{period}} (on the same row):
+
+{{company}}: Bold
+{{period}}: Regular
+Font: Times New Roman, size 10
+Alignment: Left
+Line Spacing: 1
+No space before or after paragraph
+Tab after {{company}} before entering {{period}}
+{{job_description}}:
+
+Bullet points
+Font: Times New Roman, size 10
+Alignment: Left
+Line Spacing: 1
+No space before or after paragraph
+Related Knowledge: {{related_knowledge}}:
+
+Bullet points
+Font: Times New Roman, size 10
+Alignment: Left
+Line Spacing: 1
+No space before or after paragraph
+Projects
+{{project_name}} + {{period}} (on the same row):
+
+{{project_name}}: Bold
+{{period}}: Regular
+Font: Times New Roman, size 10
+Alignment: Left
+Line Spacing: 1
+No space before or after paragraph
+Tab after {{project_name}} before entering {{period}}
+{{project_description}}:
+
+Bullet points
+Font: Times New Roman, size 10
+Alignment: Left
+Line Spacing: 1
+No space before or after paragraph
+Related Knowledge: {{related_knowledge}}:
+
+Bullet points
+Font: Times New Roman, size 10
+Alignment: Left
+Line Spacing: 1
+No space before or after paragraph
+Achievements
+{{achievement}} + {{date/period}} (on the same row):
+
+{{achievement}}: Bold
+{{date/period}}: Regular
+Font: Times New Roman, size 10
+Alignment: Left
+Line Spacing: 1
+No space before or after paragraph
+Tab after {{achievement}} before entering {{date/period}}
+{{achievement_description}}:
+
+Bullet points
+Font: Times New Roman, size 10
+Alignment: Left
+Line Spacing: 1
+No space before or after paragraph
+Skills
+{{skills}}:
+Bullet points
+Font: Times New Roman, size 10
+Alignment: Left
+Line Spacing: 1
+No space before or after paragraph
