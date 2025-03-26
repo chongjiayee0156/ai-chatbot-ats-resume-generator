@@ -1,4 +1,4 @@
-# AI Chatbot for ATS-Friendly Resume Generation
+# Coze AI Chatbot for ATS-Friendly Resume Generation
 
 ## Demo
 - **Demo Videos:**
