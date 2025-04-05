@@ -1,41 +1,58 @@
-# Coze AI Chatbot for ATS-Friendly Resume Generation
+# Coze AI Chatbot for ATS-Friendly Resume Generation 🤖📄
 
-## Demo
-- **Demo Videos:**
-  - [Manual Prompt](https://youtu.be/3-9s5kqQRYQ?si=WTaqPAAybSa6-U-u)
-  - [Resume Refinement](https://youtu.be/gwf3PMt0sVY?si=DfYucVImqQ1jt2AZ)
-  - [LinkedIn Data Import](https://youtu.be/_zysCtnA6aM?si=izBe0BNdR8uv2h9n)
+## Demo 🎬
+
+<p align="center">
+  <img src="ats-generator.jpeg" alt="Logo" width="200" />
+  <br>
+  <img src="https://github.com/user-attachments/assets/8f0e10b9-7fe2-4f5e-9da4-a42bde5a7a9b" alt="Coze AI Chatbot Demo" width="800" />
+</p>
+
+### Demo Videos:
+- 📋 [Manual Prompt](https://youtu.be/3-9s5kqQRYQ?si=WTaqPAAybSa6-U-u)
+- ✨ [Resume Refinement](https://youtu.be/gwf3PMt0sVY?si=DfYucVImqQ1jt2AZ)
+- 📲 [LinkedIn Data Import](https://youtu.be/_zysCtnA6aM?si=izBe0BNdR8uv2h9n)
+- 
+## Project Overview 🌟
+
+- Built on the **Coze AI** platform, `ats-generator` is developed using the **low-code/no-code (LCNC)** approach
+- Aim to generate resumes that are **ATS-friendly** and dynamically tailored to the needs of users.
+- Checkout report for more ino.
+
+## Features 🚀
+
+- **📝 Manual Data Entry:** Users can input their resume information freely without being restricted to predefined sections.
+- **🔧 Resume Refinement:** Users can upload existing resumes in PDF format to improve formatting, structure, and content.
+- **🔗 LinkedIn Integration:** Seamlessly import user profile data from LinkedIn for a faster and more personalized resume creation experience.
+- **⚙️ ATS-Friendly Formatting:** Ensures all resumes are optimized for Applicant Tracking Systems (ATS), improving chances of passing automated screenings.
+- **📥 Downloadable DOCX Output:** Generated resumes are available in DOCX format, allowing for easy editing and customization.
 
 
-## Project Overview
-This project is an AI-powered chatbot-as-a-service that helps users generate, refine, and update resumes dynamically. Built using **Coze AI**, the chatbot follows the **low-code-no-code (LCNC) principle**, making it accessible for users with minimal coding expertise.
 
-## Features
-- **Manual Data Entry:** Users can input information without rigid predefined sections.
-- **Resume Refinement:** Users can upload an existing resume (PDF) for improvement.
-- **LinkedIn Integration:** Users can import profile data for streamlined resume creation.
-- **ATS-Friendly Formatting:** Ensures resumes are professionally structured and optimized for applicant tracking systems.
-- **Downloadable DOCX Output:** Generates resumes in a standard, editable format.
+## Solution Architecture 🏗️
 
-## Solution Architecture
-- **Main Workflow:** Accepts user input in JSON format and generates a DOCX file.
+The architecture of Coze AI Chatbot is designed to provide a seamless, intuitive user experience, involving the following key components:
+
+- **Main Workflow:** Accepts user input (in JSON format) and processes it to generate a downloadable DOCX resume file.
 - **Plugins:**
-  - **Resume Generator:** Converts structured JSON to DOCX using Python (hosted on Render).
-  - **Resume Reader:** Extracts text from uploaded resumes for refinement.
-  - **LinkedIn Authorizer:** Allows users to import profile data (limited by LinkedIn's free API access).
-- **Storage & API Integration:** DOCX files are stored in **Supabase**, with a downloadable link provided.
-- ![architecture](architecture.png)
+  - **🖨️ Resume Generator:** Converts structured JSON data into a professional DOCX resume using Python (hosted on Render).
+  - **📄 Resume Reader:** Extracts data from uploaded resumes (PDF) for content refinement.
+  - **🔒 LinkedIn Authorizer:** Imports data from LinkedIn profiles to create resumes, with some limitations based on LinkedIn’s free API access.
+- **Cloud Storage & API Integration:** Resumes are stored in **Supabase**, where users can download their DOCX files.
 
-## Technologies Used
-- **Coze AI**: LCNC platform for chatbot development.
-- **Python & Flask**: Backend for resume generation.
-- **python-docx**: Library for DOCX file formatting.
-- **Render**: Hosting platform for API services.
-- **Supabase**: Cloud storage for DOCX files.
+![Architecture Diagram](architecture.png)
 
+## Technologies Used 🛠️
 
-## Future Enhancements
-- Expand **LinkedIn API** access for richer data extraction.
-- Improve AI accuracy in **resume parsing & formatting**.
-- Introduce **industry-specific resume templates**.
-- Develop **job-matching integration** for enhanced user experience.
+- **💡 Coze AI:** Low-code/no-code platform powering the chatbot interface.
+- **🐍 Python & Flask:** Backend stack used to process resume data and generate DOCX files.
+- **📄 python-docx:** Python library used to create and format DOCX files.
+- **☁️ Render:** Hosting platform for API services that power the resume generation process.
+- **📦 Supabase:** Cloud database and storage solution for managing and serving generated DOCX resumes.
+
+## Future Enhancements 🔮
+
+- **🔗 Expanded LinkedIn API Access:** Enabling richer data extraction from LinkedIn profiles for more comprehensive resume generation.
+- **⚙️ Improved Resume Parsing & Formatting:** Enhancing AI capabilities to parse and format resumes with greater accuracy and efficiency.
+- **💼 Industry-Specific Templates:** Adding specialized resume templates tailored for different professions and industries.
+- **🧑‍💻 Job-Matching Integration:** Enabling users to find job opportunities that match their resume profiles, creating a more seamless job search experience.
