@@ -1,18 +1,24 @@
-# Coze AI Chatbot for ATS-Friendly Resume Generation 🤖📄
-
-## Demo 🎬
-
 <p align="center">
   <img src="ats-generator.jpeg" alt="Logo" width="200" />
-  <br>
+</p>
+
+# Coze AI Chatbot for ATS-Friendly Resume Generation
+
+
+
+<p align="center">
   <img src="https://github.com/user-attachments/assets/8f0e10b9-7fe2-4f5e-9da4-a42bde5a7a9b" alt="Coze AI Chatbot Demo" width="800" />
 </p>
 
+## Demo 🎬
+
 ### Demo Videos:
-- 📋 [Manual Prompt](https://youtu.be/3-9s5kqQRYQ?si=WTaqPAAybSa6-U-u)
-- ✨ [Resume Refinement](https://youtu.be/gwf3PMt0sVY?si=DfYucVImqQ1jt2AZ)
-- 📲 [LinkedIn Data Import](https://youtu.be/_zysCtnA6aM?si=izBe0BNdR8uv2h9n)
-- 
+
+-  [![manual-prompt](https://img.shields.io/badge/Manual%20Prompt-Video-blue?style=for-the-badge)](https://youtu.be/3-9s5kqQRYQ?si=WTaqPAAybSa6-U-u) 
+-  [![resume-refinement](https://img.shields.io/badge/Resume%20Refinement-Video-blue?style=for-the-badge)](https://youtu.be/gwf3PMt0sVY?si=DfYucVImqQ1jt2AZ) 
+-  [![linkedin-import](https://img.shields.io/badge/LinkedIn%20Import-Video-blue?style=for-the-badge)](https://youtu.be/_zysCtnA6aM?si=izBe0BNdR8uv2h9n) 
+
+
 ## Project Overview 🌟
 
 - Built on the **Coze AI** platform, `ats-generator` is developed using the **low-code/no-code (LCNC)** approach
