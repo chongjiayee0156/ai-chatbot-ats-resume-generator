@@ -14,9 +14,9 @@
 
 ### Demo Videos:
 
--  [![manual-prompt](https://img.shields.io/badge/Manual%20Prompt-Video-blue?style=for-the-badge)](https://youtu.be/3-9s5kqQRYQ?si=WTaqPAAybSa6-U-u) 
--  [![resume-refinement](https://img.shields.io/badge/Resume%20Refinement-Video-blue?style=for-the-badge)](https://youtu.be/gwf3PMt0sVY?si=DfYucVImqQ1jt2AZ) 
--  [![linkedin-import](https://img.shields.io/badge/LinkedIn%20Import-Video-blue?style=for-the-badge)](https://youtu.be/_zysCtnA6aM?si=izBe0BNdR8uv2h9n) 
+-  [![manual-prompt](https://img.shields.io/badge/Manual%20Prompt-Watch%20Video-red?style=for-the-badge)](https://youtu.be/3-9s5kqQRYQ?si=WTaqPAAybSa6-U-u) 
+-  [![resume-refinement](https://img.shields.io/badge/Resume%20Refinement-Watch%20Video-red?style=for-the-badge)](https://youtu.be/gwf3PMt0sVY?si=DfYucVImqQ1jt2AZ) 
+-  [![linkedin-import](https://img.shields.io/badge/LinkedIn%20Import-VWatch%20Video-red?style=for-the-badge)](https://youtu.be/_zysCtnA6aM?si=izBe0BNdR8uv2h9n) 
 
 
 ## Project Overview 🌟
