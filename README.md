@@ -2,7 +2,7 @@
   <img src="ats-generator.jpeg" alt="Logo" width="200" />
 </p>
 
-# Coze AI Chatbot for ATS-Friendly Resume Generation
+# AI Agent: Coze AI Chatbot for ATS-Friendly Resume Generation
 
 
 
